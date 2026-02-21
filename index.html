@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Online - Visualizador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Marked.js for MD rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Highlight.js for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body class="theme-dark">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="vault-name">
+                    <i data-lucide="folder-open"></i>
+                    <span>Vault</span>
+                </div>
+                <div class="sidebar-actions">
+                    <button id="refresh-btn" title="Atualizar">
+                        <i data-lucide="refresh-cw"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="file-explorer" id="file-explorer">
+                <!-- File tree will be rendered here -->
+                <div class="loading">Carregando arquivos...</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <header class="content-header">
+                <div class="breadcrumb" id="breadcrumb">
+                    <span>Início</span>
+                </div>
+                <div class="file-title" id="active-file-title">Nenhum arquivo selecionado</div>
+            </header>
+
+            <div class="viewer-container" id="viewer-container">
+                <div class="empty-state">
+                    <i data-lucide="file-text" style="width: 64px; height: 64px; opacity: 0.2;"></i>
+                    <p>Selecione um arquivo para visualizar</p>
+                </div>
+                <!-- Content will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
